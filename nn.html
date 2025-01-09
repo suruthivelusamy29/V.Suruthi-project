@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>LOGIN For Admin</title>
+  	
+  
+  <script>
+    function validateForm(event) {
+      // Predefined username and password (hardcoded for now)
+      const correctUsername = "admin";  // Example username
+      const correctPassword = "1234";  // Example password
+
+      // Get the values of the entered username and password
+      const Username = document.getElementById("uname").value;
+      const Password = document.getElementById("pswd").value;
+	  document.getElementById("message").innerHTML = "";
+      // Check if the entered username and password match the predefined values
+      if (Username === correctUsername && Password === correctPassword) {
+        document.getElementById("message").innerHTML = "Login successful!";
+        return true;  // Allow form submission (login)
+		
+      } else {
+        document.getElementById("message").innerHTML = "Enter!";
+		event.preventDefault();
+        return false;  // Prevent form submission (failed login)
+      }
+    }
+
+  </script>
+</head>
+
+<body style="background-color:bisque;">
+
+  <form align="center" name="myForm" onsubmit="validateForm(event)" method="post">
+    <label for="uname">Username:</label><br>
+    <input type="text" id="uname" name="uname" required><br><br>
+
+    <label for="pswd">Password:</label><br>
+    <input type="password" id="pswd" name="pswd" required><br><br>
+
+    <input type="submit" id="b1" name="submit" value="SUBMIT">
+    <a href="C:\Users\velus\OneDrive\Desktop\ADD Program\admin.html"</a>
+ </form>
+ <p id="message" style="text-align: center;"></p>
+</body>
+</html>

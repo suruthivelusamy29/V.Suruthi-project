@@ -1,0 +1,122 @@
+<html>
+<head>
+<title> Registration form</title>
+
+<script>
+
+
+    function validateForm(){
+      // Get the values of password fields
+      let x = document.forms["myForm"]["pswd"].value;
+      let y = document.forms["myForm"]["cpswd"].value;
+      
+      // Check if passwords match
+      if(x === y) {
+        alert("Successfully signed up!");
+        return true;  // Allow form submission
+      } else { 
+        alert("Invalid Password!");
+        return false;  // Prevent form submission
+      }
+    }
+  </script>
+</head>
+
+
+</script>
+</head>
+<body>
+<style>
+         body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+		.form-container {
+            padding: 30px;
+            border: 2px solid #ccc;
+            background-color:#f2f2f2;
+
+        
+        }
+    </style>
+    <div class="form-container">
+
+
+<body style="background-color:white;">
+<form align="center" name="myForm" onsubmit="return validateForm()" method="post">
+    <h1>REGISTRATION FORM</h1>
+  
+
+  </form>
+  
+</body>
+</html>
+    
+
+<label for="fname"> First Name  </label>
+<input type="text" id="fname"><br><br>
+<label for="lname"> Last Name</label>
+<input type="text" id="lname"><br><br>
+<label for="Dob"> Date of Birth &nbsp; </label>
+<input type="date" id="Dob"><br><br>
+<label for="Gen"> Gender</label><br>
+<input type="radio" id="gen" name="gen">
+<label for="gen"> Male</label><br>
+<input type="radio" id="gen" name="gen">
+<label for="gen"> Female</label><br><br>
+<label for="Coun"> Country&nbsp;  </label>
+<select name="coun" id="coun"><br><br>
+<option value="coun">Select Country</option><br>
+<option value="coun">India</option>
+<option value="coun">United States</option>
+<option value="coun">Germany</option>
+<option value="coun">Japan</option>
+<option value="coun">China</option>
+<option value="coun">United Kingdom</option>
+<option value="coun">Russia</option>
+<option value="coun">Ukarine</option>
+<option value="coun">Sri Lanka</option>
+<option value="coun">France</option>
+<option value="coun">Bangladesh</option>
+<option value="coun">Pakisthan</option>
+<option value="coun">Afghanistan</option>
+<option value="coun">Argentina</option>
+<option value="coun">Canada</option>
+<option value="coun">Dubai</option>
+<option value="coun">Georgia</option>
+</select><br><br>
+
+
+    
+    <label for="mail">Mail ID:</label>
+    <input type="email" id="mail" name="mail" required><br><br> 
+
+    <label for="pswd">Password:</label>
+    <input type="password" id="pswd" name="pswd" required><br><br>
+
+    <label for="cpswd">Confirm Password:</label>
+    <input type="password" id="cpswd" name="cpswd" required><br><br>
+
+    <label for="ph">Phone Number:</label>
+    <input type="tel" id="ph" name="ph" pattern="[0-9]{10}" required><br><br>
+
+    
+
+    <input type="checkbox" id="con" name="con" required>
+    <label for="con"> I agree to all the terms and conditions </label><br><br>
+
+    
+    <input type="reset" name="cancel" id="b2" value="Cancel">
+<a href ="C:\Users\velus\OneDrive\Desktop\ADD Program\charity org.html" title="My details"> Sign in </a>
+
+
+
+</form>
+</div>
+</body>
+</html>
+

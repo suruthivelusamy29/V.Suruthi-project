@@ -1,0 +1,158 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		
+		<title>Support Our Charity</title>
+		<style>
+			body 
+			
+			.container {
+				max-width: 600px;
+				margin: 0 auto;
+				padding: 20px;
+				background-color: white;
+				border-radius: 8px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			}
+		   
+			
+			label {
+				display: block;
+				margin: 10px 0 5px;
+			}
+			
+			
+			button {
+				width: 100%;
+				padding: 10px;
+				background-color: #4CAF50;
+				color: white;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+			button:hover {
+				background-color: #45a049;
+			}
+			.thank-you {
+				text-align: center;
+				margin-top: 20px;
+				padding: 10px;
+				background-color: #e8f4e8;
+				border-radius: 5px;
+				border: 1px solid #4CAF50;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+
+	<header>
+		<h1 align="center" >Support Our Charity</h1>
+		<p align="center" >Donate money, food, or clothes to help those in need.</p>
+	</header>
+
+	<div class="container">
+	<h2>Make a Donation</h2>
+	<label for="name"> name</label>
+	<input type="text" id="name">
+	
+	<label for="date"> date</label>
+	<input type="date" id="date">
+	<label for="ph"> Phone Number</label>
+	<input type="text" id="ph">
+		
+		
+		<form id="donationForm">
+			<label for="donationType">Select Donation Type:</label>
+			<select id="donationType" name="donationType" required>
+				<option value="">Choose Donation Type</option>
+				<option value="money">Money</option>
+				<option value="food">Food</option>
+				<option value="clothes">Clothes</option>
+			</select>
+
+		
+			<div id="moneyAmountDiv" style="display: none;">
+				<label for="donationAmount">Enter Donation Amount ($):</label>
+				<input type="number" id="donationAmount" name="donationAmount" placeholder="Enter amount" min="1">
+			</div>
+
+			
+			<div id="foodAmountDiv" style="display: none;">
+				<label for="foodDetails">Enter Food Donation Details:</label>
+				<textarea id="foodDetails" name="foodDetails" placeholder="E.g., Canned Goods, Rice, etc." rows="4"></textarea>
+			</div>
+			
+			<div id="clothesAmountDiv" style="display: none;">
+				<label for="clothesDetails">Enter Clothes Donation Details:</label>
+				<textarea id="clothesDetails" name="clothesDetails" placeholder="E.g., Shirts, Pants, etc." rows="4"></textarea>
+			</div>
+
+			<button type="submit">Donate Now</button>
+		</form>
+
+		<div class="thank-you" id="thankYouMessage">
+			<h3>Thank you for your generous donation!</h3>
+			<p>Your contribution is greatly appreciated.</p>
+		</div>
+	</div>
+
+		<script>
+		// Show relevant fields based on donation type selection
+		document.getElementById('donationType').addEventListener('change', function() {
+			var donationType = this.value;
+			
+			// Hide all donation-specific fields initially
+			document.getElementById('moneyAmountDiv').style.display = 'none';
+			document.getElementById('foodAmountDiv').style.display = 'none';
+			document.getElementById('clothesAmountDiv').style.display = 'none';
+
+			// Show relevant donation fields based on type
+			if (donationType === 'money') {
+				document.getElementById('moneyAmountDiv').style.display = 'block';
+			} else if (donationType === 'food') {
+				document.getElementById('foodAmountDiv').style.display = 'block';
+			} else if (donationType === 'clothes') {
+				document.getElementById('clothesAmountDiv').style.display = 'block';
+			}
+		});
+
+		// Handle form submission
+		document.getElementById("donationForm").addEventListener("submit", function(event) {
+			event.preventDefault(); // Prevent the default form submission
+
+			var donationType = document.getElementById('donationType').value;
+			var donationAmount = document.getElementById('donationAmount').value;
+			var foodDetails = document.getElementById('foodDetails').value;
+			var clothesDetails = document.getElementById('clothesDetails').value;
+
+			// Validate the form data
+			if (donationType === 'money' && (!donationAmount || donationAmount <= 0)) {
+				alert("Please enter a valid donation amount for money.");
+				return;
+			} else if (donationType === 'food' && !foodDetails) {
+				alert("Please enter details for your food donation.");
+				return;
+			} else if (donationType === 'clothes' && !clothesDetails) {
+				alert("Please enter details for your clothes donation.");
+				return;
+			}
+
+			// Display the thank you message
+			document.getElementById('thankYouMessage').style.display = 'block';
+
+			// Optionally, clear the form fields after submission (if desired)
+			document.getElementById("donationForm").reset();
+		});
+
+
+
+
+	   
+		
+	</script>
+
+
+	</body>
+	</html>

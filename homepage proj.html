@@ -1,0 +1,129 @@
+<html>
+<head>
+<title> Home page</title>
+</head>
+
+
+<script>
+
+
+    function validateForm(){
+      // Get the values of password fields
+      let x = document.forms["myForm"]["pswd"].value;
+      let y = document.forms["myForm"]["cpswd"].value;
+      
+      // Check if passwords match
+      if(x === y) {
+        alert("Successfully signed up!");
+        return true;  // Allow form submission
+      } else { 
+        alert("Invalid Password!");
+        return false;  // Prevent form submission
+      }
+    }
+</script>
+<body>
+
+ <table border="1"  cellspacing="10" cellpadding="10" width ="500" height="650">
+<td align="center" >No</td> 
+<td align="center">Full name</td>
+<td align="center">Amout</td>
+
+</tr>
+
+<td align="Center"> 1</td>
+<td  align="Center">Anviks</td>
+<td align="Center" >$10</td>
+</tr>
+<tr>
+<td align="center" >2</td>
+<td align="center"> Amirtha</td>
+<td align="center"> $12</td></tr>
+<tr>
+<td align="center"> 3</td>
+<td align="center">Vivek</td>
+<td align="center"> $20</td></tr>
+<tr>
+<td align="center"> 4</td>
+<td align="center" span="2"> Arjun</td>
+<td align="center"> $13</td></tr>
+<tr>
+<td align="center"> 5</td>
+<td align="center" span="2">Arun</td>
+<td align="center"> $16</td></tr><tr>
+<td align="center"> 6</td>
+<td align="center" span="2">Prem kumar</td>
+<td align="center"> $10</td></tr>
+<tr>
+<td align="center"> 7</td>
+<td align="center" span="2">Manoj</td>
+<td align="center"> $15</td></tr>
+<tr>
+<td align="center"> 8</td>
+<td align="center" span="2"> prakash</td>
+<td align="center"> $16</td></tr><tr>
+<td align="center"> 9</td>
+<td align="center" span="2">Bhavya</td>
+<td align="center"> $17</td></tr>
+<tr>
+<td align="center"> 10</td>
+<td align="center" span="2">Harini</td>
+<td align="center"> $13</td></tr>
+
+
+
+
+
+ <style>
+         body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            padding: 30px;
+            border: 2px solid #ccc;
+            background-color:#f2f2f2;
+		}
+		
+</style>
+
+ 
+
+
+ <div class="form-container">
+
+
+<h1> Charity Organisation </h1>
+<h2> About us!!</h1>
+<p >Hello !! Welcome To the place Where the people's needs had been statisifed </br><br>
+<p> Every people deserves a home that they can call their own, people to care for them and look after them when they need help, <br>healthcare that is available at their doorstep and a feeling of security that comes from a sense of belonging.</p><br><br>
+<form name="myForm" onsubmit="return validateForm()" 
+method="post">
+
+<form>
+	<label for="fname"> UserName </label>
+<input type="text" id="fname"><br><br>
+<label for="pswd">Password:</label>
+    <input type="password" id="pswd" name="pswd" required><br><br>
+
+<a href ="C:\Users\velus\OneDrive\Desktop\ADD Program\charity org.html"> Login</a>
+    <input type="reset" name="cancel" id="b2" value="Cancel"><br><br>
+<a href="C:\Users\velus\OneDrive\Desktop\ADD Program\project.html"> Sign in </a><br><br>
+<a href="C:\Users\velus\OneDrive\Desktop\ADD Program\charity project.html"> Transaction details</a>
+<figure>
+<img src="C:\Users\velus\OneDrive\Desktop\project photo 1.avif" width="200" height="200">
+<img src="C:\Users\velus\OneDrive\Desktop\SOCARE-840x560.jpg" width="200" height="200">
+<img src="C:\Users\velus\OneDrive\Desktop\1000_F_558204632_MPjmetSxZSATDzyuxgYAz2Xt6Mvx4f2a.jpg" width="200" height="200">
+</figure>
+
+
+
+</form>
+</div>
+</body>
+</html>

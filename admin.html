@@ -1,0 +1,95 @@
+
+<html >
+<head>
+    <title>Charity Transaction Messages</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    padding: 2em;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    margin: 0.5em 0;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+</style>
+<body>
+    <header>
+        <h1>Charity Transactions</h1>
+    </header>
+    <main>
+        <section id="transaction-messages">
+            <h2>Transaction Messages</h2>
+            <ul id="transactionList">
+                <!-- Transaction messages will be populated here -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Charity Organization. All rights reserved.</p>
+    </footer>
+    <script>
+	// Sample transaction messages
+const transactions = [
+    { id: '001', date: '2024-12-01', amount: '$10', donor: 'Anviks', Donated:'Amount',message: 'Thank you for your support!' },
+    { id: '002', date: '2024-12-02', donor: 'Amirtha',Donated:'Food', message: 'Happy to help!' },
+    { id: '003', date: '2024-12-03', amount: '$12', donor: 'vivek', Donated :'Amount' , message: 'Keep up the great work!' }
+];
+
+document.addEventListener('DOMContentLoaded', function() {
+    const transactionList = document.getElementById('transactionList');
+    transactions.forEach(transaction => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+            <strong>Transaction ID:</strong> ${transaction.id}<br>
+            <strong>Date:</strong> ${transaction.date}<br>
+            <strong>Amount:</strong> ${transaction.amount}<br>
+            <strong>Donor:</strong> ${transaction.donor}<br>
+			<strong>Donated:</strong> ${transaction.Donated}<br>
+			
+            <strong>Message:</strong> ${transaction.message}
+        `;
+        transactionList.appendChild(listItem);
+    });
+});
+
+	</script>
+</body>
+</html>
+
